@@ -27,6 +27,7 @@ int countPairs2(int* arr, int len, int value) {
 int countPairs3(int* arr, int len, int value) {
     int a = 0;
     int nach = 0;
+    int nachh = 0;
     int count = 0;
     int size = len;
     for (int q = 0; q < len; ++q) {
@@ -42,7 +43,8 @@ int countPairs3(int* arr, int len, int value) {
                 nach = (size + nach) / 2;
             }
         }
-        nach++;
+        nachh++;
+        nach = nachh;
         size = len;
     }
     return a;
