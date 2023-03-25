@@ -26,14 +26,32 @@ int countPairs2(int* arr, int len, int value) {
 }
 int countPairs3(int* arr, int len, int value) {
     int a = 0;
-    int nach = 0;
-    int nachh = 0;
+    int nach = 1;
+    int nachh = 1;
     int count = 0;
     int size = len;
+    int sizee = len;
     for (int q = 0; q < len; ++q) {
+        if (nach == size) {
+            break;
+        }
         while (1) {
             if (arr[(size + nach) / 2] == value - arr[q]) {
                 a++;
+                for (int w = 1;; ++w) {
+                    if (arr[(size + nach) / 2 + w] == value - arr[q]) {
+                        a++;
+                    } else {
+                        break;
+                    }
+                }
+                for (int w = -1;; --w) {
+                    if (arr[(size + nach) / 2 + w] == value - arr[q]) {
+                        a++;
+                    } else {
+                        break;
+                    }
+                }
                 break;
             } else if (size - nach == 1 || value - arr[q] < 0) {
                 break;
