@@ -46,6 +46,9 @@ int countPairs3(int* arr, int len, int value) {
                     }
                 }
                 for (int w = -1;; --w) {
+                    if (q == (size + nach) / 2 + w) {
+                        break;
+                    }
                     if (arr[(size + nach) / 2 + w] == value - arr[q]) {
                         a++;
                     } else {
